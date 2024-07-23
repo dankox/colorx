@@ -14,14 +14,15 @@ system_python_bootstrap_toolchain(
     visibility = ["PUBLIC"],
 )
 
-system_go_toolchain(
+cc_go_toolchain(
     name = "go",
     visibility = ["PUBLIC"],
-)
-
-cc_go_toolchain(
-    name = "go_linux",
-    visibility = ["PUBLIC"],
-    go_arch = "amd64",
-    go_os = "linux",
+    go_arch = select({
+        "config//cpu:x86_64": "amd64",
+        "config//cpu:arm64": "arm64",
+    }),
+    go_os = select({
+        "config//os:linux": "linux",
+        "config//os:macos": "darwin",
+    }),
 )

@@ -1,0 +1,15 @@
+platform(
+    name = "macos_x86_64",
+    constraint_values = [
+        "config//os/constraints:macos",
+        "config//cpu/constraints:x86_64",
+    ],
+)
+
+platform(
+    name = "macos_arm64",
+    constraint_values = [
+        "config//os/constraints:macos",
+        "config//cpu/constraints:arm64",
+    ],
+)

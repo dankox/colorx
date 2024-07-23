@@ -11,15 +11,4 @@ go_binary(
     srcs = [
         "main.go",
     ],
-    # env_go_os = "linux",
-    # env_go_arg = "amd64",
-)
-
-go_binary(
-    name = "colorx_linux",
-    _go_toolchain = "toolchains//:go_linux",
-    # _go_stdlib = "toolchains//:stdlib_linux",
-    srcs = [
-        "main.go",
-    ],
 )
