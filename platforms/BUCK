@@ -13,3 +13,19 @@ platform(
         "config//cpu/constraints:arm64",
     ],
 )
+
+platform(
+    name = "linux_arm64",
+    constraint_values = [
+        "config//os/constraints:linux",
+        "config//cpu/constraints:arm64",
+    ],
+)
+
+platform(
+    name = "linux_x86_64",
+    constraint_values = [
+        "config//os/constraints:linux",
+        "config//cpu/constraints:x86_64",
+    ],
+)
